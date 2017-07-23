@@ -20,8 +20,8 @@ Route::get('portafolio', function(){
 })->name('portafolio');
 
 Route::get('/politicas-privacidad', function(){
-	return view('others.politicas-privacidad');
-})->name('politicas');
+	return view('others.politicas-de-privacidad');
+})->name('politicas-de-privacidad');
 
 Route::get('/contacto', function(){
 	return view('others.contacto');
@@ -29,4 +29,6 @@ Route::get('/contacto', function(){
 
 Route::get('/sobre-nosotros', function(){
 	return view('others.sobre-nosotros');
-})->name('contacto');
+})->name('sobre-nosotros');
+
+Route::get('/product/{id}', 'productController@showProduct')->name('showProduct');

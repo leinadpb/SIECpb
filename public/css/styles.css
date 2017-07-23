@@ -1,4 +1,4 @@
-
+/* GENERAL */
 
 html{
     background-color: #fff;
@@ -11,13 +11,15 @@ html{
 }
 
 body{
-    background: url('../images/fondo.jpg') 50% 100px no-repeat fixed;
+    background: url('../images/fondo.jpg') 50% 100px repeat fixed;
     background-size: cover;
     background-position: top left;
     width: 100%;
     padding-top: 70px;
 }
 
+
+/* HOME PAGE */
 .full-height {
     height: 100vh;
 }
@@ -50,41 +52,15 @@ body{
 	font-style: normal;
 }
 
-.pBox{
-    width:140px;
-    height: 200px;
-    background-color: white;
-    border: solid 1px gray;
-    display: inline-block;
-    overflow: hidden;
-    margin-left:0.4em;
-    margin-bottom:0.4em;
-    position: relative;
-}
 
-.pImage{
-    width: 100%;
-    height: 60%;
-}
+/* SHOW ALL PRODUCTS */
 
 .pButton{
-    background-color: #810052; 
-    border: none;
-    color: white;
-    padding:0.4em;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
     width:100%;
-    position: absolute;
-    bottom:0;
 
 }
-.pButton:hover{
-    background-color: #8d1963; 
-}
 
-
+/* FOOTER */
 .footer{
 	text-align: center;
 }
@@ -96,4 +72,38 @@ body{
 }
 .menu-footer li{
 	display: inline-block;
+}
+
+
+
+/* SINLGE PRODUCT */
+.info-box{
+  
+}
+.info-box div{
+    display: inline-block;
+    
+  
+}
+.section-image{
+    width:39%;
+   
+    align-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+.section-description{
+    width:59%;
+    left:0;
+    vertical-align: top;
+
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    background-color: #810052 !important;
+    border: solid 1px purple !important;
+
+}
+.btn-primary:hover{
+    background-color: #b40072 !important;
 }

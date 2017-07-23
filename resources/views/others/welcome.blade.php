@@ -6,7 +6,8 @@
 
 		<!-- Title -->
 	    <div class='content'>
-	    	<h1 class='title'>SIEC<span class='title-part-2'>pb</span></h1>
+	    	<!-- <h1 class='title'>SIEC<span class='title-part-2'>pb</span></h1> -->
+	    	<img class="image-responsive" width="80%" src="{{URL::to('images/siec-logo.svg')}}">
 	    	<span class='tagline'>Desarrollo de sitios web profesionales</span>
 	    </div>
 
