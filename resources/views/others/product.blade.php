@@ -5,13 +5,13 @@
 @section('content')
 
 	<div class="page-header">
-		<h1>Product name here</h1>
+		<h1>{{ $product->name }}</h1>
 	</div>
 	<div class="row">
 
 		<div class="col-md-5">
 			<a href="#" class="thumbnail">
-		      <img class="img-responsive" src="{{URL::to('images/example.png')}}" alt="...">
+		      <img class="img-responsive" src="{{ $product->front_image }}" alt="{{ $product->name }}">
 		    </a>
 		</div>
 
@@ -19,12 +19,11 @@
 			<div class=""><h3>Descripción</h3></div>
 			<hr>
 			<div class="description">
-				<span>Aqui va la descripcion corta del producto. Mas bien como un extracto del mismo en el que se muestren las mejores características del mismo.</span><br>
-				<span>Dirección: </span>
+				<span>{{ $product->short_des }}</span>
 				<br>
-				<span>Nombre de la empresa: </span>
+				<span>Nombre de la empresa: {{ $product->product_owner }}</span>
 				<br>
-				<span>Plataforma utilizada: </span>
+				<span>Plataforma utilizada: {{ $product->platform }}</span>
 				<br>
 			</div>
 		</div>

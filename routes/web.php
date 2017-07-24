@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('others.welcome');
 })->name('home');
 
-Route::get('portafolio', function(){
-	return view('others.portafolio');
-})->name('portafolio');
+Route::get('portafolio', 'productController@showAll')->name('portafolio');
 
 Route::get('/politicas-privacidad', function(){
 	return view('others.politicas-de-privacidad');
@@ -32,3 +30,9 @@ Route::get('/sobre-nosotros', function(){
 })->name('sobre-nosotros');
 
 Route::get('/product/{id}', 'productController@showProduct')->name('showProduct');
+
+Route::get('/add-product', function(){
+	return view('others.add-product');
+})->name('add_product');
+
+Route::post('/save-product', 'productController@saveProduct')->name('saveProduct');
