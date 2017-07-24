@@ -27,6 +27,7 @@ class CreateProductsTable extends Migration
             $table->string('product_url');
             $table->string('product_owner');
             $table->string('product_creator');
+            $table->string('type');
         });
     }
 

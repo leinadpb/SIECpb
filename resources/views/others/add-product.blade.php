@@ -4,7 +4,7 @@
 @section('content')
 
 	<div class="page-header">
-		<h1>Agregar al portafolio</h1>
+		<h1><a class='back-icon' href='{{ URL::previous() }}'><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a> Agregar al portafolio</h1>
 	</div>
 	<div class='container-fluid'>
 		<!-- Start Form -->

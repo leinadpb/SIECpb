@@ -116,17 +116,41 @@ body{
 
 }
 
+/* ICONS */
+
+/* Go Back */
 .back-icon:active{
+    color:black;
+}
+.back-icon:visited{
     color:black;
 }
 .back-icon:hover{
     color:purple;
 }
-.back-icon:visited{
-    color:black;
+/* Add Product */
+.add-product-icon{
+    font-size: 16px;
+}
+.add-product-icon:active{
+    color:#810052;
+}
+.add-product-icon:visited{
+    color:#810052;
+}
+.add-product-icon:hover{
+    color:#b40072;
+}
+.icons{
+    font-size: 19px;
 }
 
-.single-product-back-button{
-    margin:0;
-    padding:0;
+.icons:visited{
+    color: #B40404;
+}
+.icons:active{
+    color: #B40404;
+}
+.icons:hover{
+    color:black;
 }

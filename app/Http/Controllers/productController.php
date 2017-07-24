@@ -33,6 +33,7 @@ class productController extends Controller
     	$p_url = $r->input('product_url');
     	$p_owner = $r->input('product_owner');
     	$p_creator = $r->input('product_creator');
+        $type = $r->input('type');
     	
     	//Create the Associative array
     	$product = new Product([
@@ -45,7 +46,8 @@ class productController extends Controller
     		'front_image' => $frontImage,
     		'product_url' => $p_url,
     		'product_owner' => $p_owner,
-    		'product_creator' => $p_creator 
+    		'product_creator' => $p_creator,
+            'type' => $type
     	]);
 
     	//Add prodcut to DataBase
@@ -90,6 +92,7 @@ class productController extends Controller
         $p->product_url = $request->input('product_url');
         $p->product_owner = $request->input('product_owner');
         $p->product_creator = $request->input('product_creator');
+        $p->type = $request->input('type');
 
         $p->save();
 

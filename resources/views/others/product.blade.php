@@ -17,7 +17,9 @@
 	@endif
 
 	<div class="page-header">
-		<h1><a class='back-icon' href='{{ URL::previous() }}'><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a> {{ $product->name }} <span style="font-size: 14dp"><a href='{{ route("modifyProduct", ["id" => $product->id]) }}' ttype="button" class="btn btn-sm btn-info">Modificar</a> <a href='{{ route("deleteProduct", ["id" => $product->id]) }}' type="button" class="btn btn-sm btn-danger">Eliminar</a></span></h1>
+		<h1><a class='back-icon' href='{{ route("portafolio") }}'><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a> {{ $product->name }} <span><a href='{{ route("modifyProduct", ["id" => $product->id]) }}' class='icons'><span class='glyphicon glyphicon-pencil' aria-hidden="true"></span></a>
+		<span><a href='{{ route("deleteProduct", ["id" => $product->id]) }}' class='icons'><span class='glyphicon glyphicon-remove' aria-hidden="true"></span></a>
+		
 	</div>
 	<div class="row">
 
@@ -36,6 +38,8 @@
 				<span>Nombre de la empresa: {{ $product->product_owner }}</span>
 				<br>
 				<span>Plataforma utilizada: {{ $product->platform }}</span>
+				<br>
+				<span>Tipo de producto: {{ $product->type }}</span>
 				<br>
 			</div>
 		</div>

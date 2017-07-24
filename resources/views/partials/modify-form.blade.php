@@ -6,6 +6,12 @@
     </div>
   </div>
   <div class="form-group">
+    <label for="inputType" class="col-sm-2 control-label">Tipo de producto</label>
+    <div class="col-sm-10">
+      <input name="type" type="text" class="form-control" id="inputType" placeholder="Tipo" value='{{ $product->type }}' required>
+    </div>
+  </div>
+  <div class="form-group">
     <label for="inputShortDes" class="col-sm-2 control-label">Descripción corta</label>
     <div class="col-sm-10">
       <input name="short_des" type="textarea" class="form-control" id="inputShortDes" value="{{ $product->short_des }}" required>

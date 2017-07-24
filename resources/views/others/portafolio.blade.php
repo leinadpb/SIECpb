@@ -5,9 +5,16 @@
 <div class="myContent">
 	<!-- Header -->
 	<div class="page-header">
-		<h1>Portafolio</h1>
+		<h1>Portafolio <a href='{{ route("add_product") }}' class='add-product-icon'><span class='glyphicon glyphicon-plus' aria-hidden="true"></span></a></h1>
 	</div>
 <div class='container'>
+	<!-- Search Box -->
+	<div class='search-box'>
+		<form method='post' action=''>
+
+		</form>
+	</div>
+	<!-- End Search Box -->
 	@foreach($products as $p)
 	<!-- View -->
 	<div class="view">
