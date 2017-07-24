@@ -4,8 +4,20 @@
 
 @section('content')
 
+	@if(Session::has('edited'))
+		<div class="row">
+			<div class="col-md-12">
+				<div class="alert alert-info alert-dismissible" role='alert'>{{ Session::get('edited') }}
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	@endif
+
 	<div class="page-header">
-		<h1>{{ $product->name }}</h1>
+		<h1><a class='back-icon' href='{{ URL::previous() }}'><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a> {{ $product->name }} <span style="font-size: 14dp"><a href='{{ route("modifyProduct", ["id" => $product->id]) }}' ttype="button" class="btn btn-sm btn-info">Modificar</a> <a href='{{ route("deleteProduct", ["id" => $product->id]) }}' type="button" class="btn btn-sm btn-danger">Eliminar</a></span></h1>
 	</div>
 	<div class="row">
 

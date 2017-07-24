@@ -30,6 +30,9 @@ Route::get('/sobre-nosotros', function(){
 })->name('sobre-nosotros');
 
 Route::get('/product/{id}', 'productController@showProduct')->name('showProduct');
+Route::get('/product/{id}/delete', 'productController@deleteProduct')->name('deleteProduct');
+Route::get('/product/{id}/modify', 'productController@modifyProduct')->name('modifyProduct');
+Route::post('/product/{id}/save-modified', 'productController@saveEditedProduct')->name('saveEditedProduct');
 
 Route::get('/add-product', function(){
 	return view('others.add-product');

@@ -54,7 +54,46 @@ class productController extends Controller
         //Retreive all products
         $p = Product::orderBy('created_at', 'desc')->get();
 
-    	return view('others.portafolio', ['products' => $p]);
+    	return redirect()->route('portafolio', ['products' => $p]);
 
     }
+
+    public function deleteProduct($id){
+
+        //Find product
+        $product = Product::find($id);
+
+        //Delete product
+        $product->delete();
+
+        //Retreive all products
+        $p = Product::orderBy('created_at', 'desc')->get();
+
+        return redirect()->route('portafolio', ['products' => $p]);
+    }
+
+    public function modifyProduct($id){
+        $p = Product::find($id);
+        return view('others.modify-product', ['product' => $p]);
+    }
+
+    public function saveEditedProduct(Request $request, $id){
+        $p = Product::find($id);
+
+        $p->name = $request->input('name');
+        $p->short_des = $request->input('short_des');
+        $p->long_des = $request->input('long_des');
+        $p->price = $request->input('price');
+        $p->platform = $request->input('platform');
+        $p->characteristics = $request->input('charas');
+        $p->front_image = $request->input('front_image');
+        $p->product_url = $request->input('product_url');
+        $p->product_owner = $request->input('product_owner');
+        $p->product_creator = $request->input('product_creator');
+
+        $p->save();
+
+        return redirect()->route('showProduct', ['id' => $p->id])->with('edited', 'El producto fue modificado exitosamente.');
+    }
+
 }
