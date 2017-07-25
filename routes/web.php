@@ -48,3 +48,5 @@ Route::post('/save-product', 'productController@saveProduct')->name('saveProduct
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('admin');
+
+Route::get('/search', 'productController@search_ByName')->name('search');

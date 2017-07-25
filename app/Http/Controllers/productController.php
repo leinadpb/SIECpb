@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Session;
+use View;
 
 class productController extends Controller
 {
@@ -97,6 +99,18 @@ class productController extends Controller
         $p->save();
 
         return redirect()->route('showProduct', ['id' => $p->id])->with('edited', 'El producto fue modificado exitosamente.');
+    }
+
+    public function search_ByName(Request $request){
+        //dd($request->input('search'));
+        $term = $request->input('search');
+
+        $products = Product::where('name', '=', $term)->get();
+
+        $msg = count($products) . " elementos encontrados.";
+
+        return view('others.portafolio', ['products' => $products])->with('mySearch', 'ejemplo');
+
     }
 
 }

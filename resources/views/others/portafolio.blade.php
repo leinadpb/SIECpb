@@ -4,21 +4,30 @@
 @section('content')
 <div class="myContent">
 	<!-- Header -->
-	<div class="page-header">
-		<h1>Portafolio 
-			@if (!Auth::guest()) 
-			<a href='{{ route("add_product") }}' class='add-product-icon'><span class='glyphicon glyphicon-plus' aria-hidden="true"></span></a>
-			@endif
-		</h1>
-	</div>
-<div class='container'>
-	<!-- Search Box -->
-	<div class='search-box'>
-		<form method='post' action=''>
-
-		</form>
-	</div>
+	<div class="myHeader row">
+		<div class='col-md-2'>
+			<h1>Portafolio </h1>
+		</div>
+		<!-- Search Box -->
+		<div class='col-md-4 search-box'>
+			<form method='get' action='{{ route("search") }}'>
+				<div class="input-group">
+		      		<input name='search' type="text" class="form-control" placeholder="Search for...">
+		      		<span class="input-group-btn">
+		        		<button class="btn btn-primary" type="submit">Go!</button>
+		      		</span>
+		    	</div><!-- /input-group -->
+			</form>
+			<a class='btn btn-scondary btn-sm' role="button" data-toggle="collapse" href="#search-advanced-form" aria-expanded="false" aria-controls="collapseExample">Búsqueda avanzada</a>
+		</div>
 	<!-- End Search Box -->
+	</div>
+@include('partials.advance-search-fom')
+<div class='container'>
+	@if(Session::has('mySearch'))
+		<div><p class='text-info'>{{ Session::get('mySearch')}}</p></div>
+	@endif
+	<br>
 	@foreach($products as $p)
 	<!-- View -->
 	<div class="view">

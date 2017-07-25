@@ -111,10 +111,15 @@ body{
 
 
 
-
-.container > .view{
-
+.search-box{
+    margin-top: 23px;
 }
+
+.myHeader{
+    margin-bottom: 2.0em;
+}
+
+
 
 /* ICONS */
 
