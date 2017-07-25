@@ -17,8 +17,12 @@
 	@endif
 
 	<div class="page-header">
-		<h1><a class='back-icon' href='{{ route("portafolio") }}'><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a> {{ $product->name }} <span><a href='{{ route("modifyProduct", ["id" => $product->id]) }}' class='icons'><span class='glyphicon glyphicon-pencil' aria-hidden="true"></span></a>
+		<h1>
+			<a class='back-icon' href='{{ route("portafolio") }}'><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a> {{ $product->name }} <span>
+			@if (!Auth::guest()) 
+			<a href='{{ route("modifyProduct", ["id" => $product->id]) }}' class='icons'><span class='glyphicon glyphicon-pencil' aria-hidden="true"></span></a>
 		<span><a href='{{ route("deleteProduct", ["id" => $product->id]) }}' class='icons'><span class='glyphicon glyphicon-remove' aria-hidden="true"></span></a>
+			@endif
 		
 	</div>
 	<div class="row">

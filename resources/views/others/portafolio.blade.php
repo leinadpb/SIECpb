@@ -5,7 +5,11 @@
 <div class="myContent">
 	<!-- Header -->
 	<div class="page-header">
-		<h1>Portafolio <a href='{{ route("add_product") }}' class='add-product-icon'><span class='glyphicon glyphicon-plus' aria-hidden="true"></span></a></h1>
+		<h1>Portafolio 
+			@if (!Auth::guest()) 
+			<a href='{{ route("add_product") }}' class='add-product-icon'><span class='glyphicon glyphicon-plus' aria-hidden="true"></span></a>
+			@endif
+		</h1>
 	</div>
 <div class='container'>
 	<!-- Search Box -->

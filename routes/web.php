@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('others.welcome');
 })->name('home');
 
+Route::get('home', function(){
+	return view('others.welcome');
+})->name('home');
+
 Route::get('portafolio', 'productController@showAll')->name('portafolio');
 
 Route::get('/politicas-privacidad', function(){
@@ -39,3 +43,8 @@ Route::get('/add-product', function(){
 })->name('add_product');
 
 Route::post('/save-product', 'productController@saveProduct')->name('saveProduct');
+
+
+Auth::routes();
+
+Route::get('/admin', 'HomeController@index')->name('admin');
