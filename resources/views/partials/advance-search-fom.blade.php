@@ -60,7 +60,7 @@
 		    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 		      <div class="panel-body">
 		        <select name='platform' class="form-control">
-		        	<option selected>Todas</option>
+		        	<option selected>TODAS</option>
 		        	<option>Angular</option>
 		        	<option>Laravel</option>
 		        	<option>ionic</option>

@@ -105,21 +105,72 @@ class productController extends Controller
         //dd($request->input('search'));
         $term = $request->input('search');
 
-        $products = Product::where('name', '=', $term)->get();
+        if($term === '' || $term === null){
 
-        $msg = count($products) . " elementos encontrados.";
+            $products = Product::orderBy('created_at', 'desc')->get();
+            return view('others.portafolio', ['products' => $products])->with('mySearch', 'Nada nuevo que mostrar.');
+            
+        }else{
+            $products = Product::where('name', '=', $term)->get();
 
-        return view('others.portafolio', ['products' => $products])->with('mySearch', 'ejemplo');
+            $msg = count($products) . " elementos encontrados.";
+
+            return view('others.portafolio', ['products' => $products])->with('mySearch', 'Resultados de búsqueda.');
+        }
+
+        
 
     }
 
     public function search(Request $request){ //Advanced Search !
+
+        //Variables
+        $byName = $request->input('byName');
+        $minPrice = $request->input('minPrice');
+        $maxPrice = $request->input('maxPrice');
+        $platform = $request->input('platform');
+
+        $query = Product::orderBy('created_at', 'desc');
+
+        //By name
+        if(($byName === null) || ($byName === '')){
+
+        }else{
+            $query->where('name', '=', $byName);
+        }
+
+        //By price
+        if(($minPrice === null) || ($minPrice === '')){
+
+        }else{
+            $query->where('price', '>=', $minPrice);
+        }
+        if(($maxPrice === null) || ($maxPrice === '')){
+
+        }else{
+            $query->where('price', '<=', $maxPrice);
+        }
+
+        //By platform
+        if(($platform === null) || ($platform === '') || ($platform === 'TODAS')){
+
+        }else{
+            $query->where('platform', '=', $platform);
+        }
+
+        $products = $query->get();
+
+
+        return view('others.portafolio', ['products' => $products])->with('mySearch', 'ejemplo');
+
+/*
         return response()->json([
                 'byName' => $request->input('byName'),
                 'minPrice' => $request->input('minPrice'),
                 'maxPrice' => $request->input('maxPrice'),
                 'platform' => $request->input('platform')
             ]);
+*/
     }
 
 }
