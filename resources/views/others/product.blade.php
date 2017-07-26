@@ -28,9 +28,14 @@
 	<div class="row">
 
 		<div class="col-md-5">
+			<!-- 
 			<a href="#" class="thumbnail">
 		      <img class="img-responsive" src="{{ $product->front_image }}" alt="{{ $product->name }}">
 		    </a>
+		    -->
+		    <!-- BootStrap Carussel -->
+		    	@include('partials.slider')
+		    <!-- End -->
 		</div>
 
 		<div class="col-md-7">
@@ -75,7 +80,7 @@
 		    	<hr>
 		    	<div class='container'>
 		    		<p>
-		    			Aquí va la descripción larga del producto. Máximo de 500 caracteres.
+		    			{{ $product->long_des }}
 		    		</p>
 		    	</div>
 		    </div>
