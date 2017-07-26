@@ -50,3 +50,5 @@ Auth::routes();
 Route::get('/admin', 'HomeController@index')->name('admin');
 
 Route::get('/search', 'productController@search_ByName')->name('search');
+
+Route::get('/search-advanced', 'productController@search')->name('search-advanced');

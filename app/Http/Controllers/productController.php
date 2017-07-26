@@ -113,4 +113,13 @@ class productController extends Controller
 
     }
 
+    public function search(Request $request){ //Advanced Search !
+        return response()->json([
+                'byName' => $request->input('byName'),
+                'minPrice' => $request->input('minPrice'),
+                'maxPrice' => $request->input('maxPrice'),
+                'platform' => $request->input('platform')
+            ]);
+    }
+
 }
