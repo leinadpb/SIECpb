@@ -47,6 +47,25 @@
       <input name='front_image' type="text" class="form-control" id="inputImaageFront" value="{{ $product->front_image }}" required>
     </div>
   </div>
+
+  <?php $num = 2 ?>
+  
+  @foreach($product->images()->get() as $img)
+    <?php $custom_url = 'img_url_' . $num ?>
+    <?php $custom_id = 'img_id_' . $num ?>
+    <div class='other-images'>
+      <div class="form-group">
+        <label for="inputImageSecond" class="col-sm-2 control-label">Modificar imagen de la galería</label>
+        <div class="col-sm-10">
+          <input name='{{ $custom_url }}' type="text" class="form-control" id="inputImageSecond" placeholder="Imagen opcional" value='{{ $img->url }}'>
+          <input type='hidden' name='{{ $custom_id }}' type="text" class="form-control" value='{{ $img->id }}'>
+        </div>
+      </div>
+    </div>
+
+    <?php $num = $num + 1 ?>
+
+  @endforeach
   <div class="form-group">
     <label for="inputUrl" class="col-sm-2 control-label">Direccion web</label>
     <div class="col-sm-10">

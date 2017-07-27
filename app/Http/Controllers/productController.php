@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Images;
 use Session;
 use View;
 
@@ -36,6 +37,8 @@ class productController extends Controller
     	$p_owner = $r->input('product_owner');
     	$p_creator = $r->input('product_creator');
         $type = $r->input('type');
+        $image02 = $r->input('image_02');
+        $image03 = $r->input('image_03');
     	
     	//Create the Associative array
     	$product = new Product([
@@ -54,6 +57,24 @@ class productController extends Controller
 
     	//Add prodcut to DataBase
     	$product->save();
+
+        //If optional images are not null or not empty, then added to the 'images' table related each one with the product just created
+        if($image02 != null || $image02 != ''){
+            $img1 = new Images([
+                'url' => $image02,
+                'alt' => $name,
+                'description' => $shortDes
+            ]);
+            $product->images()->save($img1);
+        }
+        if($image03 != null || $image03 != ''){
+            $img2 = new Images([
+                'url' => $image03,
+                'alt' => $name,
+                'description' => $shortDes
+            ]);
+            $product->images()->save($img2);
+        }
 
         //Retreive all products
         $p = Product::orderBy('created_at', 'desc')->get();
@@ -98,6 +119,17 @@ class productController extends Controller
 
         $p->save();
 
+        $num = 2;
+        $count =count($p->images()->get());
+        while($count > 0){
+
+            $img = Images::find($request->input('img_id_'. $num));
+            $img->url = $request->input('img_url_' . $num);
+            $img->save();
+
+            $count = $count - 1;
+        }
+        
         return redirect()->route('showProduct', ['id' => $p->id])->with('edited', 'El producto fue modificado exitosamente.');
     }
 

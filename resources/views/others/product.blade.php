@@ -28,14 +28,14 @@
 	<div class="row">
 
 		<div class="col-md-5">
-			<!-- 
-			<a href="#" class="thumbnail">
-		      <img class="img-responsive" src="{{ $product->front_image }}" alt="{{ $product->name }}">
-		    </a>
-		    -->
-		    <!-- BootStrap Carussel -->
-		    	@include('partials.slider')
-		    <!-- End -->
+			@if(count($product->images()->get()) == 0)
+				<a href="#" class="thumbnail">
+		      		<img class="img-responsive" src="{{ $product->front_image }}" alt="{{ $product->name }}">
+		    	</a>
+			@else
+				@include('partials.slider')
+			@endif
+			
 		</div>
 
 		<div class="col-md-7">

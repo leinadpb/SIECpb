@@ -44,9 +44,23 @@
   <div class="form-group">
     <label for="inputImageFront" class="col-sm-2 control-label">Imagen de portada</label>
     <div class="col-sm-10">
-      <input name='front_image' type="text" class="form-control" id="inputImaageFront" placeholder="Imagen" required>
+      <input name='front_image' type="text" class="form-control" id="inputImageFront" placeholder="Imagen de portada" required>
     </div>
   </div>
+  
+  <div class="form-group">
+    <label for="inputImageSecond" class="col-sm-2 control-label">Agregar otra imagen</label>
+    <div class="col-sm-10">
+      <input name='image_02' type="text" class="form-control" id="inputImageSecond" placeholder="Imagen opcional">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputImageThird" class="col-sm-2 control-label">Agregar otra imagen</label>
+    <div class="col-sm-10">
+      <input name='image_03' type="text" class="form-control" id="inputImageThird" placeholder="Imagen opcional">
+    </div>
+  </div>
+
   <div class="form-group">
     <label for="inputUrl" class="col-sm-2 control-label">Direccion web</label>
     <div class="col-sm-10">
