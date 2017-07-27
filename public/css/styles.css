@@ -109,6 +109,37 @@ body{
     background-color: #b40072 !important;
 }
 
+.description{
+    padding:0.4em;
+}
+.mini-title{
+    top: 15px;
+    left: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.value{
+   margin-left: 1.0em;
+}
+.myGroup{
+    margin-bottom: 0.3em;
+}
+.moneda{
+    font-weight: 600;
+    padding:0.3em;
+}
+.nav-pills>li.active>a, 
+.nav-pills>li.active>a:focus, 
+.nav-pills>li.active>a:hover{
+    background-color: #810052 !important;
+}
+
+
+/* SEARCH */
+
 
 
 .search-box{
@@ -187,5 +218,11 @@ body{
 }
 
 .other-images{
-    padding-left: 1.0em;
+    padding-left: 2.0em;
+}
+
+.des-title{
+    width:100%;
+    height: auto;
+    text-align: center;
 }
