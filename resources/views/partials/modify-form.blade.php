@@ -75,7 +75,7 @@
    <div class="form-group">
     <label for="inputYoutube" class="col-sm-2 control-label">Video en YouTube</label>
     <div class="col-sm-10">
-      <input name='youtube_url' type="text" class="form-control" id="inputYoutube" placeholder="Youtube video url" required>
+      <input name='youtube_url' type="text" class="form-control" id="inputYoutube" value="{{ $product->youtube_url }}" required>
     </div>
   </div>
   <div class="form-group">
