@@ -37,6 +37,7 @@ class productController extends Controller
     	$p_owner = $r->input('product_owner');
     	$p_creator = $r->input('product_creator');
         $type = $r->input('type');
+        $youtube = $r->input('youtube_url');
         $image02 = $r->input('image_02');
         $image03 = $r->input('image_03');
     	
@@ -52,7 +53,8 @@ class productController extends Controller
     		'product_url' => $p_url,
     		'product_owner' => $p_owner,
     		'product_creator' => $p_creator,
-            'type' => $type
+            'type' => $type,
+            'youtube_url' => $youtube
     	]);
 
     	//Add prodcut to DataBase
@@ -116,6 +118,7 @@ class productController extends Controller
         $p->product_owner = $request->input('product_owner');
         $p->product_creator = $request->input('product_creator');
         $p->type = $request->input('type');
+        $p->youtube_url = $request->input('youtube_url');
 
         $p->save();
 
