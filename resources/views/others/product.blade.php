@@ -102,7 +102,7 @@
 					<div align="center"><h3 >{{ $product->name }}</h3></div>
 			    	<hr>
 				    <div class="embed-responsive embed-responsive-16by9">
-				    	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/F6GgZMY0YkY"></iframe>
+				    	<iframe class="embed-responsive-item" src="{{ $product->youtube_url }}"></iframe>
 					</div>
 				  </div>
 				</div>
