@@ -42,7 +42,7 @@
                             <label for="age" class="col-md-4 control-label">Age</label>
 
                             <div class="col-md-6">
-                                <input id="age" type="number" class="form-control" name="age" value="" max='125' min='18' required>
+                                <input id="age" type="number" class="form-control" name="age" max='125' min='18' required>
                             </div>
                         </div>
 
@@ -50,7 +50,7 @@
                             <label for="career" class="col-md-4 control-label">Career</label>
 
                             <div class="col-md-6">
-                                <input id="career" type="text" class="form-control" name="career" value="" required>
+                                <input id="career" type="text" class="form-control" name="career" required>
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@
                             <label for="tagline" class="col-md-4 control-label">Tagline</label>
 
                             <div class="col-md-6">
-                                <input id="tagline" type="text" class="form-control" name="tagline" value="" required>
+                                <input id="tagline" type="text" class="form-control" name="tagline" required>
                             </div>
                         </div>
 
