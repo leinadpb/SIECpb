@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="{{route('home')}}">
-        <img alt="SIECpb" src="{{URL::to('images/siec-logo.svg')}}" width='30px' heigh='30px'>
+        <img alt="SIECpb" src="https://www.dropbox.com/s/yzjp717ld66tcq4/SIEC-LOGO.svg?raw=1" width='30px' heigh='30px'>
       </a>
       <a class="navbar-brand" href="{{route('home')}}">SIECpb</a>
     </div>
